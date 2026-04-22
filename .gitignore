@@ -1,0 +1,14 @@
+journal.md
+.env
+__pycache__/
+# Personal Notes & Local Configs
+journal.md
+project-info/
+
+# Python Environments & Cache
+venv/
+__pycache__/
+.pytest_cache/
+
+# OS Files
+.DS_Store

@@ -1,0 +1,31 @@
+name: Python Microservices CI
+
+# This workflow runs every time you push code to the 'main' branch
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # GitHub spins up a Linux server
+
+    steps:
+    - uses: actions/checkout@v4 # Downloads your code onto the server
+    
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run Pytest
+      # We tell it to navigate into the order_service folder and run the test
+      run: |
+        cd order_service
+        pytest test_order_api.py -v
