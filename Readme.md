@@ -24,7 +24,7 @@ Both microservices utilize `aiokafka` as an asynchronous background task (via Fa
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 * **Backend Framework:** FastAPI (Asynchronous Python)
 * **Message Broker:** Apache Kafka / Zookeeper (Official Docker Images)
 * **Database:** PostgreSQL (using `asyncpg` drivers)
